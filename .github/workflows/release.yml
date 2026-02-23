@@ -26,7 +26,7 @@ jobs:
       - uses: knope-dev/action@f5b66103ffbd41863822de6dad5606c1879545a5
 
       - name: Create tags and GitHub releases
-        run: knope release
+        run: knope release --verbose
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
