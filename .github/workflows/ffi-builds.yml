@@ -31,6 +31,7 @@ jobs:
       - name: "Get tag of draft release"
         run: |
           TAG=$(gh release list --repo ${{ github.repository }} --json 'isDraft,tagName' --jq '[.[] | select(.isDraft and (.tagName | startswith("livekit-ffi/")))] | first | .tagName // empty')
+          echo "Resolved FFI draft release tag: '${TAG:-}'"
           echo "tag_name=${TAG:-}" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
