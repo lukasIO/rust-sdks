@@ -14,22 +14,29 @@
 
 name: FFI
 on:
-  # push:
-  # branches: ["main"]
-  # tags:
-  #   - "livekit-ffi/v*"
+  push:
+    branches: ["main"]
   workflow_dispatch:
   workflow_call:
-    inputs:
-      tag:
-        required: false
-        type: string
 
 env:
   CARGO_TERM_COLOR: always
-  TAG_NAME: ${{ inputs.tag || github.ref_name }}
 
 jobs:
+  get-tag:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Get tag of draft release"
+        run: echo "tag_name=$(gh release list --repo ${{ github.repository }} --json 'isDraft,tagName' --jq '.[] | select(.isDraft and (.tagName | startswith("livekit-ffi/"))) | .tagName')" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+        id: get-tag
+    outputs:
+      tag_name: ${{ steps.get-tag.outputs.tag_name }}
+
   build:
     strategy:
       fail-fast: false
@@ -214,10 +221,10 @@ jobs:
   release:
     name: Upload artifacts and publish GH release
     runs-on: ubuntu-latest
-    needs: build
+    needs: [get-tag, build]
     permissions:
       contents: write
-    if: startsWith(inputs.tag || github.ref_name, 'livekit-ffi/v')
+    if: needs.get-tag.outputs.tag_name != ''
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -232,5 +239,5 @@ jobs:
 
       - name: Upload artifacts and publish release
         run: |
-          gh release upload ${{ env.TAG_NAME }} ${{ github.workspace }}/ffi-builds/*
-          gh release edit ${{ env.TAG_NAME }} --draft=false
+          gh release upload ${{ needs.get-tag.outputs.tag_name }} ${{ github.workspace }}/ffi-builds/*
+          gh release edit ${{ needs.get-tag.outputs.tag_name }} --draft=false
