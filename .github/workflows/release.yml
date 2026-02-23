@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event.pull_request.merged && startsWith(github.head_ref, 'release'))
+      (github.event.pull_request.merged && startsWith(github.head_ref, 'knope/release'))
     outputs:
       ffi_tag: ${{ steps.ffi.outputs.ffi_tag }}
     steps:
