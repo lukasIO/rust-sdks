@@ -84,7 +84,7 @@ name = "prepare-release"
 
 [[workflows.steps]]
 type = "Command"
-command = "git switch -c release"
+command = "git switch -c knope/release"
 
 [[workflows.steps]]
 type = "PrepareRelease"
@@ -95,7 +95,7 @@ command = "git commit -m \"chore: prepare release\""
 
 [[workflows.steps]]
 type = "Command"
-command = "git push --force --set-upstream origin release"
+command = "git push --force --set-upstream origin knope/release"
 
 [[workflows.steps]]
 type = "CreatePullRequest"
@@ -112,3 +112,9 @@ name = "release"
 
 [[workflows.steps]]
 type = "Release"
+
+[[workflows]]
+name = "document-change"
+
+[[workflows.steps]]
+type = "CreateChangeFile"
