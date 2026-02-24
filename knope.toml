@@ -2,6 +2,9 @@
 owner = "lukasIO"
 repo = "rust-sdks"
 
+[changes]
+ignore_conventional_commits = true
+
 # --- Published to crates.io ---
 
 [packages.soxr-sys]
