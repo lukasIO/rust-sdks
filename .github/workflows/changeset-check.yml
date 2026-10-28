@@ -43,6 +43,6 @@ jobs:
       # comment that links to a prefilled changeset. Dependents are bumped
       # by the tool, so a changeset only names the crates whose own files
       # changed. The `internal` label exempts a PR.
-      - uses: lukasIO/verwalter@v0.6.0
+      - uses: lukasIO/verwalter@v0.7.0
         with:
           command: check
