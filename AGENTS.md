@@ -142,12 +142,12 @@ A crate with no such table is not feature-checked at all. Today eleven crates ar
 
 ## Documenting changes
 
-- Changes are documented using [_knope_](https://knope.tech)
+- Changes are documented with changesets, released by [_verwalter_](https://github.com/lukasIO/verwalter)
 - Every PR needs a changeset
 - Changeset must list any crates which need to be bumped stemming from the change
-- Document changes interactively from the CLI with `knope document-change` or create manually in `/.changeset`
+- Create a changeset file manually in `/.changeset` (front matter: `crate: patch|minor|major` per crate whose own files changed; dependents are bumped automatically)
 - Write the changeset summary as a single unwrapped line of plain prose
-  - knope renders a one-line summary as a changelog bullet. A summary spanning more than one line is instead promoted to a `####` heading, with everything after the first line left as loose body text below it — that mix of bullets and headings is what makes the release page look inconsistent
+  - verwalter renders a one-line summary as a changelog bullet. A summary spanning more than one line is instead promoted to a `####` heading, with everything after the first line left as loose body text below it — that mix of bullets and headings is what makes the release page look inconsistent
   - A hard line wrap alone triggers this, with no Markdown involved: a summary wrapped at 80 columns produced the heading `#### Add agent guidance for detecting and preventing memory-lifecycle regressions in`, stranding the rest of the sentence underneath it
   - So no Markdown blocks — headings, bullet lists, tables, code fences, blockquotes, or bold-led paragraphs. Inline backticks are fine and render correctly
   - Keep it to a sentence or two written for someone reading the release notes; rationale, alternatives, and migration detail belong in the PR description

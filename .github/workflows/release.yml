@@ -17,8 +17,28 @@ permissions:
   contents: write
 
 jobs:
+  # Tag the merged versions and create the GitHub releases (a draft for
+  # livekit-ffi, which ffi-builds.yml fills and publishes). Nothing is
+  # remembered between runs: a re-run finishes what is missing.
+  release:
+    if: (startsWith(github.head_ref, 'release/') && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    outputs:
+      released: ${{ steps.verwalter.outputs.released }}
+      releases: ${{ steps.verwalter.outputs.releases }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: main
+          fetch-depth: 0
+      - id: verwalter
+        uses: lukasIO/verwalter@v0.5.0
+        with:
+          command: release
+          dry-run: ${{ inputs.dry_run || false }}
+
   publish-crates:
-    if: (github.head_ref == 'knope/release' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    needs: release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
@@ -53,7 +73,8 @@ jobs:
 
   call-node-ffi:
     name: Call Node FFI Builds
-    if: (github.head_ref == 'knope/release' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
+    needs: release
+    if: contains(needs.release.outputs.releases, '"package":"livekit-ffi"') || github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/node-builds.yml
     with:
       dry_run: ${{ inputs.dry_run || false }}
