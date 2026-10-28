@@ -76,3 +76,5 @@ Two conventions keep a source easy to consume:
 - **Block freely in the next-frame call.** The pump runs the source on its
   own thread, so waiting there costs the application nothing. Return
   promptly once the stop token fires.
+
+<!-- verwalter release-cycle test -->
