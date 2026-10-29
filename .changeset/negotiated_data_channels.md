@@ -1,5 +1,4 @@
 ---
-livekit-capture: minor
 livekit-ffi: minor
 ---
 
