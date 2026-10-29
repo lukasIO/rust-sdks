@@ -3,6 +3,14 @@ base_branch = "main"
 # Workspace manifest and lock file hold a pin for every crate.
 pin_files = ["Cargo.toml", "Cargo.lock"]
 
+# `verwalter publish` hands the whole workspace to cargo-release once: it
+# walks the crates in dependency order and skips versions crates.io has.
+# verwalter asks crates.io per crate before (all there: skipped) and after
+# (there, or failed), and blocks dependents of a crate that is not there.
+[publish]
+registry = "crates"
+workspace = "cargo release publish --workspace --no-confirm --no-verify --execute"
+
 [packages.soxr-sys]
 path = "soxr-sys"
 versioned_files = ["soxr-sys/Cargo.toml"]
@@ -100,8 +108,10 @@ versioned_files = ["livekit-ffi/Cargo.toml", "livekit-ffi-node-bindings/package.
 changelog = "livekit-ffi/CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
-# ffi-builds.yml attaches the binaries, then publishes the release.
+# ffi-builds.yml attaches the binaries, then publishes the release. The
+# crate is `publish = false`: a GitHub release only, nothing for crates.io.
 draft = true
+registry = "none"
 
 [packages.livekit-wakeword]
 path = "livekit-wakeword"
