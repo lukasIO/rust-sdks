@@ -13,99 +13,99 @@ workspace = "cargo release publish --workspace --no-confirm --no-verify --execut
 
 [packages.soxr-sys]
 path = "soxr-sys"
-versioned_files = ["soxr-sys/Cargo.toml"]
-changelog = "soxr-sys/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.yuv-sys]
 path = "yuv-sys"
-versioned_files = ["yuv-sys/Cargo.toml"]
-changelog = "yuv-sys/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.imgproc]
 path = "imgproc"
-versioned_files = ["imgproc/Cargo.toml"]
-changelog = "imgproc/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.webrtc-sys-build]
 path = "webrtc-sys/build"
-versioned_files = ["webrtc-sys/build/Cargo.toml"]
-changelog = "webrtc-sys/build/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.webrtc-sys]
 path = "webrtc-sys"
-versioned_files = ["webrtc-sys/Cargo.toml"]
-changelog = "webrtc-sys/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-protocol]
 path = "livekit-protocol"
-versioned_files = ["livekit-protocol/Cargo.toml"]
-changelog = "livekit-protocol/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-api]
 path = "livekit-api"
-versioned_files = ["livekit-api/Cargo.toml"]
-changelog = "livekit-api/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-net]
 path = "livekit-net"
-versioned_files = ["livekit-net/Cargo.toml"]
-changelog = "livekit-net/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-token]
 path = "livekit-token"
-versioned_files = ["livekit-token/Cargo.toml"]
-changelog = "livekit-token/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-region]
 path = "livekit-region"
-versioned_files = ["livekit-region/Cargo.toml"]
-changelog = "livekit-region/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-signaling]
 path = "livekit-signaling"
-versioned_files = ["livekit-signaling/Cargo.toml"]
-changelog = "livekit-signaling/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.libwebrtc]
 path = "libwebrtc"
-versioned_files = ["libwebrtc/Cargo.toml"]
-changelog = "libwebrtc/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit]
 path = "livekit"
-versioned_files = ["livekit/Cargo.toml"]
-changelog = "livekit/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-ffi]
 path = "livekit-ffi"
-versioned_files = ["livekit-ffi/Cargo.toml", "livekit-ffi-node-bindings/package.json", "livekit-ffi-node-bindings/npm/darwin-arm64/package.json", "livekit-ffi-node-bindings/npm/darwin-x64/package.json", "livekit-ffi-node-bindings/npm/linux-arm64-gnu/package.json", "livekit-ffi-node-bindings/npm/linux-x64-gnu/package.json", "livekit-ffi-node-bindings/npm/win32-x64-msvc/package.json"]
-changelog = "livekit-ffi/CHANGELOG.md"
+versioned_files = ["Cargo.toml", "../livekit-ffi-node-bindings/package.json", "../livekit-ffi-node-bindings/npm/darwin-arm64/package.json", "../livekit-ffi-node-bindings/npm/darwin-x64/package.json", "../livekit-ffi-node-bindings/npm/linux-arm64-gnu/package.json", "../livekit-ffi-node-bindings/npm/linux-x64-gnu/package.json", "../livekit-ffi-node-bindings/npm/win32-x64-msvc/package.json"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 # ffi-builds.yml attaches the binaries, then publishes the release. The
@@ -115,63 +115,63 @@ registry = "none"
 
 [packages.livekit-wakeword]
 path = "livekit-wakeword"
-versioned_files = ["livekit-wakeword/Cargo.toml"]
-changelog = "livekit-wakeword/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-datatrack]
 path = "livekit-datatrack"
-versioned_files = ["livekit-datatrack/Cargo.toml"]
-changelog = "livekit-datatrack/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-telemetry]
 path = "livekit-telemetry"
-versioned_files = ["livekit-telemetry/Cargo.toml"]
-changelog = "livekit-telemetry/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-common]
 path = "livekit-common"
-versioned_files = ["livekit-common/Cargo.toml"]
-changelog = "livekit-common/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-data-stream]
 path = "livekit-data-stream"
-versioned_files = ["livekit-data-stream/Cargo.toml"]
-changelog = "livekit-data-stream/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-rpc]
 path = "livekit-rpc"
-versioned_files = ["livekit-rpc/Cargo.toml"]
-changelog = "livekit-rpc/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.device-info]
 path = "device-info"
-versioned_files = ["device-info/Cargo.toml"]
-changelog = "device-info/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-token-source]
 path = "livekit-token-source"
-versioned_files = ["livekit-token-source/Cargo.toml"]
-changelog = "livekit-token-source/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
 
 [packages.livekit-capture]
 path = "livekit-capture"
-versioned_files = ["livekit-capture/Cargo.toml"]
-changelog = "livekit-capture/CHANGELOG.md"
+versioned_files = ["Cargo.toml"]
+changelog = "CHANGELOG.md"
 tag_template = "{package}/v{version}"
 release = "tag_and_release"
