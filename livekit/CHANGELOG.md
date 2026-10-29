@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.8.0-rc.1
+
+### Minor Changes
+
+- Create the well-known data channels as negotiated (fixed IDs) when the server supports it (protocol 18), saving the data channel open handshake round trip. Falls back to in-band channels against older servers. - [#1527](https://github.com/livekit/rust-sdks/pull/1527) ([@cnderrauber](https://github.com/cnderrauber))
+
+### Patch Changes
+
+- Keep NVIDIA's Jetson video codec plugin loaded while probing MMAPI encoder capabilities, preventing probe teardown from breaking subsequent GStreamer capture. - [#1526](https://github.com/livekit/rust-sdks/pull/1526) ([@alan-george-lk](https://github.com/alan-george-lk))
+- Release local tracks when the server ends the room by detaching publisher senders before the publisher PeerConnection closes, and make `RtpSender::track()` return `None` for a detached sender instead of dereferencing null. - [#1570](https://github.com/livekit/rust-sdks/pull/1570) ([@MaxHeimbrock](https://github.com/MaxHeimbrock))
+- Add `InferenceGrants` and `AccessToken::with_inference_grants`, so Rust services can mint tokens for LiveKit Inference. - [#1577](https://github.com/livekit/rust-sdks/pull/1577) ([@u9g](https://github.com/u9g))
+- Add `ObservabilityGrants` and `AccessToken::with_observability_grants`, so Rust services can mint tokens that publish observability data. - [#1578](https://github.com/livekit/rust-sdks/pull/1578) ([@1egoman](https://github.com/1egoman))
+- Remove the `use_legacy_data_streams` migration flag. The FFI `RoomDataStreamOptions.use_legacy_client_implementation` field is now deprecated and ignored, and the hidden `RoomDataStreamOptions::with_legacy_client_implementation` builder and the hidden `SignalOptions::use_legacy_data_streams` field are gone; clients always advertise data streams v2 support. - [#1575](https://github.com/livekit/rust-sdks/pull/1575) ([@1egoman](https://github.com/1egoman))
+- Updated dependencies: libwebrtc@0.3.28-rc.1, livekit-api@1.0.0-rc.1, livekit-signaling@0.2.0-rc.1, livekit-token@1.0.0-rc.1
+
 ## [Unreleased]
 
 ## [0.7.32](https://github.com/livekit/rust-sdks/compare/rust-sdks/livekit@0.7.31...rust-sdks/livekit@0.7.32) - 2026-02-16
