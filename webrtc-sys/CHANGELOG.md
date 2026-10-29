@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.52
+
+### Patch Changes
+
+- Keep NVIDIA's Jetson video codec plugin loaded while probing MMAPI encoder capabilities, preventing probe teardown from breaking subsequent GStreamer capture. - [#1526](https://github.com/livekit/rust-sdks/pull/1526) ([@alan-george-lk](https://github.com/alan-george-lk))
+- Release local tracks when the server ends the room by detaching publisher senders before the publisher PeerConnection closes, and make `RtpSender::track()` return `None` for a detached sender instead of dereferencing null. - [#1570](https://github.com/livekit/rust-sdks/pull/1570) ([@MaxHeimbrock](https://github.com/MaxHeimbrock))
+
 ## [Unreleased]
 
 ## [0.3.23](https://github.com/livekit/rust-sdks/compare/rust-sdks/webrtc-sys@0.3.22...rust-sdks/webrtc-sys@0.3.23) - 2026-02-16

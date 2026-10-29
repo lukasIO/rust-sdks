@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.0
+
+### Major Changes
+
+- Add `ObservabilityGrants` and `AccessToken::with_observability_grants`, so Rust services can mint tokens that publish observability data. - [#1578](https://github.com/livekit/rust-sdks/pull/1578) ([@1egoman](https://github.com/1egoman))
+
+### Patch Changes
+
+- Add `InferenceGrants` and `AccessToken::with_inference_grants`, so Rust services can mint tokens for LiveKit Inference. - [#1577](https://github.com/livekit/rust-sdks/pull/1577) ([@u9g](https://github.com/u9g))
+
 ## 0.3.1 (2026-10-20)
 
 ### Fixes
