@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.0
+
+### Major Changes
+
+- Add `ObservabilityGrants` and `AccessToken::with_observability_grants`, so Rust services can mint tokens that publish observability data. - [#1578](https://github.com/livekit/rust-sdks/pull/1578) ([@1egoman](https://github.com/1egoman))
+
+### Minor Changes
+
+- Create the well-known data channels as negotiated (fixed IDs) when the server supports it (protocol 18), saving the data channel open handshake round trip. Falls back to in-band channels against older servers. - [#1527](https://github.com/livekit/rust-sdks/pull/1527) ([@cnderrauber](https://github.com/cnderrauber))
+
+### Patch Changes
+
+- Add `InferenceGrants` and `AccessToken::with_inference_grants`, so Rust services can mint tokens for LiveKit Inference. - [#1577](https://github.com/livekit/rust-sdks/pull/1577) ([@u9g](https://github.com/u9g))
+- Remove the `use_legacy_data_streams` migration flag. The FFI `RoomDataStreamOptions.use_legacy_client_implementation` field is now deprecated and ignored, and the hidden `RoomDataStreamOptions::with_legacy_client_implementation` builder and the hidden `SignalOptions::use_legacy_data_streams` field are gone; clients always advertise data streams v2 support. - [#1575](https://github.com/livekit/rust-sdks/pull/1575) ([@1egoman](https://github.com/1egoman))
+- Updated dependencies: livekit-signaling@0.2.0, livekit-token@1.0.0
+
 ## [Unreleased]
 
 ## 0.9.1 (2026-10-20)
