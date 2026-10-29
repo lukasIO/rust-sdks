@@ -61,7 +61,7 @@ livekit-capture = { version = "0.1.7", path = "livekit-capture" }
 livekit-ffi = { version = "0.13.2", path = "livekit-ffi" }
 livekit-datatrack = { version = "0.2.4", path = "livekit-datatrack" }
 livekit-telemetry = { version = "0.1.1", path = "livekit-telemetry" }
-livekit-signaling = { version = "0.1.7", path = "livekit-signaling" }
+livekit-signaling = { version = "0.2.0", path = "livekit-signaling" }
 livekit-token = { version = "1.0.0", path = "livekit-token" }
 livekit-token-source = { version = "0.1.4", path = "livekit-token-source" }
 livekit-common = { version = "0.1.6", path = "livekit-common" }
