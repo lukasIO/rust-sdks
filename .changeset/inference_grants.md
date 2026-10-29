@@ -1,6 +1,5 @@
 ---
 livekit: patch
-livekit-api: patch
 livekit-capture: patch
 livekit-ffi: patch
 ---

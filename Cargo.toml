@@ -56,7 +56,7 @@ device-info = { version = "0.1.1", path = "device-info" }
 imgproc = { version = "0.3.20", path = "imgproc" }
 libwebrtc = { version = "0.3.55", path = "libwebrtc" }
 livekit = { version = "0.9.7", path = "livekit" }
-livekit-api = { version = "0.9.1", path = "livekit-api" }
+livekit-api = { version = "1.0.0", path = "livekit-api" }
 livekit-capture = { version = "0.1.7", path = "livekit-capture" }
 livekit-ffi = { version = "0.13.2", path = "livekit-ffi" }
 livekit-datatrack = { version = "0.2.4", path = "livekit-datatrack" }
