@@ -1,5 +1,4 @@
 ---
-livekit-token: major
 livekit: patch
 livekit-api: major
 livekit-capture: patch

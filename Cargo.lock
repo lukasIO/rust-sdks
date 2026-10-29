@@ -4025,7 +4025,7 @@ dependencies = [
 
 [[package]]
 name = "livekit-token"
-version = "0.3.1"
+version = "1.0.0"
 dependencies = [
  "hmac",
  "jsonwebtoken",
