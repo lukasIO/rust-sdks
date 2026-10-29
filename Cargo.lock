@@ -3645,7 +3645,7 @@ dependencies = [
 
 [[package]]
 name = "libwebrtc"
-version = "0.3.54"
+version = "0.3.55"
 dependencies = [
  "cxx",
  "env_logger 0.11.11",
