@@ -14,6 +14,15 @@
 - When the local room closes, in-flight `perform_rpc` calls now fail with `RpcErrorCode::ConnectionClosed` (1506) instead of `RecipientDisconnected` (1503), which remains reserved for remote participant departures.
 - Report the .NET SDK as `ClientInfo.SDK.DOTNET` in the join request. The `dotnet` SDK name fell through to `UNKNOWN` on the single peer connection path. - #1669 (@MaxHeimbrock)
 
+## 0.2.1
+
+### Patch Changes
+
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Update dependent SDK packages for the Agents 2.0 protocol and service client changes.
+- Mark data track unpublished after republish fail
+- Updated dependencies: livekit@0.11.1
+
 ## 0.1.9 (2026-11-04)
 
 ### Fixes

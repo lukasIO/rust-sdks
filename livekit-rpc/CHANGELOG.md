@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.3.1
+
+### Patch Changes
+
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Update dependent SDK packages for the Agents 2.0 protocol and service client changes.
+- Updated dependencies: livekit-common@0.1.8, livekit-data-stream@0.2.2, livekit-protocol@0.8.4
+
 ## 0.3.0 (2026-11-13)
 
 ### Breaking Changes

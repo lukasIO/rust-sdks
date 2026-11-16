@@ -1,4 +1,14 @@
 # Changelog
+
+## 0.2.6
+
+### Patch Changes
+
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Update dependent SDK packages for the Agents 2.0 protocol and service client changes.
+- Mark data track unpublished after republish fail
+- Updated dependencies: livekit-common@0.1.8, livekit-protocol@0.8.4
+
 ## 0.2.5 (2026-11-13)
 
 ### Fixes

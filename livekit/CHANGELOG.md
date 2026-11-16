@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.11.1
+
+### Patch Changes
+
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Update dependent SDK packages for the Agents 2.0 protocol and service client changes.
+- Fix Objective-C linking
+- Mark data track unpublished after republish fail
+- Updated dependencies: libwebrtc@0.4.2, livekit-api@0.10.3, livekit-common@0.1.8, livekit-data-stream@0.2.2, livekit-datatrack@0.2.6, livekit-protocol@0.8.4, livekit-rpc@0.3.1, livekit-signaling@0.2.1, livekit-token@0.4.2
+
 ## [Unreleased]
 
 ## [0.7.32](https://github.com/livekit/rust-sdks/compare/rust-sdks/livekit@0.7.31...rust-sdks/livekit@0.7.32) - 2026-02-16

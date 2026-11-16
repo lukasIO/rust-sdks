@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.10.3
+
+### Patch Changes
+
+- Preserve all seven framework task states and absent versus empty task names in thread listings, retaining typed status filters.
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Allow LiveKitApi to reuse a caller-supplied HTTP client so services share its TLS configuration and connection pool.
+- Updated dependencies: livekit-protocol@0.8.4, livekit-signaling@0.2.1, livekit-token@0.4.2
+
 ## [Unreleased]
 
 ## 0.10.2 (2026-11-13)

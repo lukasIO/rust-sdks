@@ -1,4 +1,26 @@
 # Changelog
+
+## 0.3.0
+
+### Minor Changes
+
+- Test the telemetry pipeline end to end against the backend contract: routing, tokens, collector answers, retries, holds and the write-ahead cache.
+- Add the telemetry pipeline: per-room scopes, typed spans, and an exporter that caches and uploads OTLP batches under a device-aware cadence and hold policy.
+- Add `global`, a process-wide telemetry pipeline with platform instruments and a synchronous opt-out that retries incomplete erasures.
+- Clarify exclusive ownership of the configured telemetry cache directory and the conservative opt-out result when a final per-cache clear fails.
+- Recover cached batches with streaming splits above an 8 MiB threshold for decoded input. Retain unsupported batches and remove stale metadata after parent eviction.
+- Rename telemetry stats report input arguments to `track_id` alongside the breaking `RtcStatsSample` field migration while preserving track values and existing report admission semantics.
+
+### Patch Changes
+
+- Clearing the telemetry disk cache now syncs the directory once for its deletion sweep instead of once per batch, and still syncs it when a deletion fails.
+- Clearing the telemetry disk cache, as the opt-out does, now also deletes stray files in the storage directory and reports an entry it cannot delete, so the opt-out no longer reports success while a stray file stays.
+- A Room that connects while the exporter retires unused credentials keeps its token, so its telemetry no longer waits forever without uploading.
+- A telemetry pipeline that `install` refuses after the opt-out is now cancelled, so its exporter stops by itself (the caller still joins the task), and it stays known to later `disable` calls, which retry a failed delete of its caller-provided cache; installing the installed pipeline again no longer hands it back as the outgoing one.
+- Clarify that a failed batch split can report an already evicted parent without resurrecting records or counting the loss twice.
+- Keep telemetry correlation consistent: a room identity change closes the open RTC windows and applies all four fields together, scoped records and spans no longer link to a span of another session, and `max_cache_bytes` gets its documented one-byte floor.
+- A telemetry shutdown now gives the records and spans that a retained scope captures during its final drain further bounded encoding turns, which start only before the original export deadline; a started turn may finish after that deadline, and what is still queued when no further turn may start is not cached.
+
 ## 0.2.0 (2026-11-13)
 
 ### Breaking Changes

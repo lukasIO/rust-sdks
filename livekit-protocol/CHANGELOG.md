@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.4
+
+### Patch Changes
+
+- Preserve all seven framework task states and absent versus empty task names in thread listings, retaining typed status filters.
+- AgentDB wire errors carry a numeric code with its name and description, and Hello carries the client version.
+- Restore durable function-call metadata on field 7 while leaving incompatible legacy field 6 unused.
+- Update the v1 thread schema to explicit partition keys, conversation ordering and Unix millisecond timestamps, and expose DEFAULT_PARTITION_KEY for framework default resolution.
+
 ## [0.7.1](https://github.com/livekit/rust-sdks/compare/rust-sdks/livekit-protocol@0.7.0...rust-sdks/livekit-protocol@0.7.1) - 2026-02-16
 
 ### Other
