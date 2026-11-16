@@ -48,25 +48,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: windows-latest
-            platform: windows
-            ffi_platform: ffi-desktop
-            dylib: livekit_ffi.dll
-            target: x86_64-pc-windows-msvc
-            name: ffi-windows-x86_64
-          - os: windows-latest
-            platform: windows
-            ffi_platform: ffi-windows-arm64
-            dylib: livekit_ffi.dll
-            target: aarch64-pc-windows-msvc
-            name: ffi-windows-arm64
-          - os: macos-latest
-            platform: macos
-            ffi_platform: ffi-desktop
-            dylib: liblivekit_ffi.dylib
-            target: x86_64-apple-darwin
-            macosx_deployment_target: "10.15"
-            name: ffi-macos-x86_64
           - os: macos-latest
             platform: macos
             ffi_platform: ffi-desktop
@@ -74,20 +55,6 @@ jobs:
             target: aarch64-apple-darwin
             macosx_deployment_target: "11.0" # aarch64 requires 11
             name: ffi-macos-arm64
-          - os: macos-latest
-            platform: ios
-            ffi_platform: ffi-ios
-            dylib: liblivekit_ffi.a
-            target: aarch64-apple-ios
-            iphoneos_deployment_target: "13.0"
-            name: ffi-ios-arm64
-          - os: macos-latest
-            platform: ios
-            ffi_platform: ffi-ios
-            dylib: liblivekit_ffi.a
-            target: aarch64-apple-ios-sim
-            iphoneos_deployment_target: "13.0"
-            name: ffi-ios-sim-arm64
           - os: ubuntu-latest
             platform: linux
             ffi_platform: ffi-desktop
@@ -95,34 +62,6 @@ jobs:
             dylib: liblivekit_ffi.so
             target: x86_64-unknown-linux-gnu
             name: ffi-linux-x86_64
-          - os: ubuntu-24.04-arm
-            platform: linux
-            ffi_platform: ffi-desktop
-            build_image: quay.io/pypa/manylinux_2_28_aarch64
-            dylib: liblivekit_ffi.so
-            target: aarch64-unknown-linux-gnu
-            name: ffi-linux-arm64
-          - os: ubuntu-latest
-            platform: android
-            ffi_platform: ffi-android
-            dylib: liblivekit_ffi.so
-            jar: libwebrtc.jar
-            target: aarch64-linux-android
-            name: ffi-android-arm64
-          - os: ubuntu-latest
-            platform: android
-            ffi_platform: ffi-android
-            dylib: liblivekit_ffi.so
-            jar: libwebrtc.jar
-            target: armv7-linux-androideabi
-            name: ffi-android-armv7
-          - os: ubuntu-latest
-            platform: android
-            ffi_platform: ffi-android
-            dylib: liblivekit_ffi.so
-            jar: libwebrtc.jar
-            target: x86_64-linux-android
-            name: ffi-android-x86_64
 
     name: Build (${{ matrix.target }}${{ github.event_name == 'workflow_dispatch' && format(' [{0}]', github.event.inputs.build_profile) || '' }})
     runs-on: ${{ matrix.os }}
