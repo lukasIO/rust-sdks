@@ -63,7 +63,7 @@ jobs:
             target: x86_64-unknown-linux-gnu
             name: ffi-linux-x86_64
 
-    name: Build (${{ matrix.target }}${{ github.event_name == 'workflow_dispatch' && format(' [{0}]', github.event.inputs.build_profile) || '' }})
+    name: Build (${{ matrix.target }}${{ github.event.inputs.build_profile && format(' [{0}]', github.event.inputs.build_profile) || '' }})
     runs-on: ${{ matrix.os }}
     steps:
       - name: TEST ONLY - fail one build leg
