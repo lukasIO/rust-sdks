@@ -66,11 +66,6 @@ jobs:
     name: Build (${{ matrix.target }}${{ github.event.inputs.build_profile && format(' [{0}]', github.event.inputs.build_profile) || '' }})
     runs-on: ${{ matrix.os }}
     steps:
-      - name: TEST ONLY - fail one build leg
-        if: ${{ matrix.name == 'ffi-linux-x86_64' }}
-        shell: bash
-        run: exit 1
-
       - uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
         with:
           ref: ${{ inputs.ref }}
