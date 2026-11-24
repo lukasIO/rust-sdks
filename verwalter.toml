@@ -54,6 +54,7 @@ release.draft = true
 # checksum for each target of uniffi-cdylib.yml. Keep the list equal to what
 # those two workflows build. release.yml and uniffi-dart-publish.yml read it.
 release.required_assets = [
+  "ffi-macos-arm64.zip",
   "build-aarch64-unknown-linux-gnu.zip",
   "build-aarch64-unknown-linux-gnu.zip.sha256",
   "build-x86_64-unknown-linux-gnu.zip",
