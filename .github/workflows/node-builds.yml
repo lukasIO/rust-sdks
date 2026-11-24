@@ -74,17 +74,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-15-large
-            platform: macos
-            target: x86_64-apple-darwin
-            macosx_deployment_target: "10.15"
-          - os: macos-15
-            platform: macos
-            target: aarch64-apple-darwin
-            macosx_deployment_target: "11.0"
-          - os: windows-latest
-            platform: windows
-            target: x86_64-pc-windows-msvc
           - os: ubuntu-latest
             platform: linux
             target: x86_64-unknown-linux-gnu
@@ -224,7 +213,7 @@ jobs:
 
       - name: Upload JS
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        if: ${{ matrix.os == 'macos-15' }}
+        if: ${{ matrix.os == 'ubuntu-latest' }}
         with:
           name: js-bindings
           path: livekit-ffi-node-bindings/native.*
